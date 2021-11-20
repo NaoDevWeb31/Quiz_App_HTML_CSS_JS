@@ -20,7 +20,6 @@ fetch(
     return res.json();
   })
   .then((loadedQuestions) => {
-    console.log(loadedQuestions.results);
     questions = loadedQuestions.results.map((loadedQuestions) => {
       const formattedQuestion = {
         question: loadedQuestions.question,
@@ -64,7 +63,7 @@ getNewQuestion = () => {
   if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
     localStorage.setItem("mostRecentScore", score);
     //go to the end page
-    return window.location.assign("/end.html");
+    return window.location.assign("../html/end.html");
   }
   questionCounter++;
   progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
